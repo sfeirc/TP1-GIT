@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomulaire de Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Contactez nous</h2>
+
+    <form action="exportToExcel.php" method="post">
+        <button type="submit">Exporter les données en Excel</button>
+    </form>
+    
+
+    <form action="soumettre.php" method="post">
+        <label for="first_name">Prénom</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Entrer votre Prenom" maxlength="25" minlength="3" required>
+
+        <label for="last_name">Nom</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Entrer votre Nom" maxlength="25" minlength="3" required>
+
+        <label for="email">Adresse Email</label>
+        <input type="email" id="email" name="email" placeholder="Entrer votre email" required>
+
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" 
+        name="phone" 
+        placeholder="Entrez votre numéro de téléphone"  
+        pattern="(\+33|0)[1-9](\d{2}){4}" 
+        title="Le numéro de téléphone doit être au format français. Exemples: 0123456789 ou +33123456789" required>
+
+
+        <label for="gender">Genre</label>
+        <select id="gender" name="gender" required>
+            <option value="">Selectionner votre Genre</option>
+            <option value="femme">Femme</option>
+            <option value="homme">Homme</option>
+            <option value="autre">Autre</option>
+        </select>
+
+        <label for="voice">Voie souhaitée </label>
+        <select id="voice" name="voice" required>
+            <option value="">Selectionner la voix souhaitée</option>
+            <option value="apprentissage">Apprentissage</option>
+            <option value="initial">Initial</option>
+            <option value="jsp">Ne sais pas encore</option>
+        </select>
+
+        <label for="education_level">Formation + niveau souhaité</label>
+        <select id="education_level" name="education_level" required>
+            <option value="">Selectionner la formation + niveau souhaité</option>
+            <option value="cap">CAP</option>
+            <option value="bts">BTS</option>
+            <option value="bachelor">Bachelor</option>
+            <option value="autre">Autre</option>
+        </select>
+
+        <label for="message">Commentaire</label>
+        <textarea id="message" name="message" placeholder="Entrer un commentaire"></textarea>
+
+        <button type="submit">Envoyer le formulaire</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
